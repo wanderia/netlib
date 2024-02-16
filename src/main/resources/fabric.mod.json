@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "name": "netlib",
+  "id": "wanderia-netlib",
+  "version": "$version",
+  "contributors": [
+    "The Wanderia Team",
+    "JustPyrrha"
+  ],
+  "contact": {
+    "homepage": "https://docs.wanderia.dev/",
+    "issues": "https://github.com/wanderia/netlib/issues"
+  },
+  "license": "MPL-2.0",
+  "environment": "*",
+  "depends": {
+    "minecraft": ">=1.20.4",
+    "fabric-language-kotlin": "*",
+    "fabric-networking-api-v1": "*"
+  },
+  "custom": {
+    "modmenu": {
+      "badges": [ "library" ]
+    }
+  }
+}
