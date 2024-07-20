@@ -93,7 +93,7 @@ jobs:
           NL=$'\n'
           CHANGELOG=${CHANGELOG//$'\\n'/"${NL}"}
           echo '$CHANGELOG' >> "notes.txt"
-          gh release create ${{ github.ref_name }} **/build/libs/**.jar --notes-file notes.txt
+          gh release create ${{ github.ref_name }} build/libs/**.jar --notes-file notes.txt
 
       - name: Patch Changelog
         run: ./gradlew patchChangelog
