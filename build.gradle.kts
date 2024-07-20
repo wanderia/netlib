@@ -91,10 +91,8 @@ val enableDCEVM: Boolean =
 
 val testmod: SourceSet by
     sourceSets.creating {
-        compileClasspath += sourceSets.main.get().compileClasspath
-        runtimeClasspath += sourceSets.main.get().runtimeClasspath
-
-        dependencies { implementation(sourceSets.main.get().output) }
+        compileClasspath += sourceSets.main.get().output
+        runtimeClasspath += sourceSets.main.get().output
     }
 
 loom {
