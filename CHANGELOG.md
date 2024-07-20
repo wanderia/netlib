@@ -41,7 +41,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `dev.wanderia.netlib.samples` has been replaced with a full example test mod in `src/testmod`.
 - Yumi licenser (replaced by spotless)
 
-## 1.0.0 - 2024-02-16
+## [1.0.0] - 2024-02-16
 
 ### Added
 
