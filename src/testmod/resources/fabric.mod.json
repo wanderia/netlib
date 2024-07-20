@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "testmod",
+  "version": "0",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      {
+        "adapter": "kotlin",
+        "value": "dev.wanderia.testmod.TestMod"
+      }
+    ],
+    "wanderia-netlib": [
+      {
+        "adapter": "kotlin",
+        "value": "dev.wanderia.testmod.NetLibInit"
+      }
+    ]
+  }
+}

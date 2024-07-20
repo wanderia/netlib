@@ -5,7 +5,6 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
-
 package dev.wanderia.netlib.format
 
 import kotlinx.serialization.ExperimentalSerializationApi
@@ -13,14 +12,13 @@ import kotlinx.serialization.SerializationStrategy
 import kotlinx.serialization.descriptors.SerialDescriptor
 import kotlinx.serialization.encoding.AbstractEncoder
 import kotlinx.serialization.encoding.CompositeEncoder
-import kotlinx.serialization.modules.EmptySerializersModule
 import kotlinx.serialization.modules.SerializersModule
 import kotlinx.serialization.serializer
 import net.minecraft.network.FriendlyByteBuf
 
 @ExperimentalSerializationApi
-public class CraftByteBufEncoder(private val buf: FriendlyByteBuf) : AbstractEncoder() {
-    override val serializersModule: SerializersModule = EmptySerializersModule()
+public class PacketByteBufEncoder(private val buf: FriendlyByteBuf) : AbstractEncoder() {
+    override val serializersModule: SerializersModule = WanderiaSerializersModule()
 
     override fun encodeBoolean(value: Boolean) {
         buf.writeBoolean(value)
@@ -63,18 +61,24 @@ public class CraftByteBufEncoder(private val buf: FriendlyByteBuf) : AbstractEnc
     }
 
     override fun encodeNull(): Unit = encodeBoolean(false)
+
     override fun encodeNotNullMark(): Unit = encodeBoolean(true)
 
-    override fun beginCollection(descriptor: SerialDescriptor, collectionSize: Int): CompositeEncoder {
+    override fun beginCollection(
+        descriptor: SerialDescriptor,
+        collectionSize: Int
+    ): CompositeEncoder {
         encodeInt(collectionSize)
         return this
     }
 }
 
-@OptIn(ExperimentalSerializationApi::class)
+@ExperimentalSerializationApi
 public fun <T> encodeTo(buf: FriendlyByteBuf, serializer: SerializationStrategy<T>, value: T) {
-    val encoder = CraftByteBufEncoder(buf)
+    val encoder = PacketByteBufEncoder(buf)
     encoder.encodeSerializableValue(serializer, value)
 }
 
-public inline fun <reified T> encodeTo(buf: FriendlyByteBuf, value: T): Unit = encodeTo(buf, serializer(), value)
+@ExperimentalSerializationApi
+public inline fun <reified T> encodeTo(buf: FriendlyByteBuf, value: T): Unit =
+    encodeTo(buf, serializer(), value)

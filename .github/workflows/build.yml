@@ -1,0 +1,154 @@
+name: Build
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    name: Build and Test
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup JDK
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 21
+
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v3
+        with:
+          dependency-graph: generate-and-submit
+          artifact-retention-days: 1
+
+      - name: Set Gradle Wrapper Executable
+        run: chmod +x gradlew
+
+      - name: Build and Test
+        run: ./gradlew build test spotlessCheck
+
+  publish:
+    name: Publish
+    runs-on: ubuntu-latest
+    if: startsWith(github.ref, 'refs/tags/') && github.repository == 'wanderia/netlib'
+    needs:
+      - build
+    permissions:
+      contents: write
+      pull-requests: write
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup JDK
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 21
+
+      - name: Set Gradle Wrapper Executable
+        run: chmod +x gradlew
+
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v3
+
+      - name: Prepare Changelog
+        id: changelog
+        run: |
+          CHANGELOG=$(./gradlew getChangelog --console=plain -q --no-header --no-summary --unreleased --no-empty-sections)
+
+          CHANGELOG="${CHANGELOG//$'\n'/'\\n'}"
+          CHANGELOG="${CHANGELOG//$'\r'/''}"
+          CHANGELOG=$(sed -E 's/Downloading https:\/\/services\.gradle\.org\/distributions\/gradle-[0-9\\.]*-bin\.zip\\\\n[\\.0-9%]*\\\\n//' <<< $CHANGELOG)
+
+          echo "changelog=$CHANGELOG" >> "$GITHUB_OUTPUT"
+
+          echo "# Changelog" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "$CHANGELOG" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Publish to Modrinth
+        env:
+          MODRINTH_TOKEN: ${{ secrets.MODRINTH_TOKEN }}
+        run: ./gradlew modrinth modrinthSyncBody
+
+      - name: Publish to GitHub
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          CHANGELOG="${{ steps.changelog.outputs.changelog }}"
+          NL=$'\n'
+          CHANGELOG=${CHANGELOG//$'\\n'/"${NL}"}
+          echo "$CHANGELOG" >> "notes.txt"
+          gh release create ${{ github.ref_name }} **/build/libs/**.jar --notes-file notes.txt
+
+      - name: Patch Changelog
+        run: ./gradlew patchChangelog
+
+      - name: Create Patched Changelog Pull Request
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          VERSION="${{ github.ref_name }}"
+          BRANCH="changelog-patch/$VERSION"
+
+          git config user.email "github-actions@github.com"
+          git config user.name "github-actions"
+
+          git checkout -b $BRANCH
+          git add CHANGELOG.md
+          git commit -m "docs(changelog): patch changelog for $VERSION"
+          git push -u origin $BRANCH
+
+          gh pr create \
+              --title "docs(changelog): patch changelog for $VERSION" \
+              --body-file notes.txt \
+              --base main \
+              --head "$BRANCH"
+
+      - name: Build Documentation (DokkaHtml)
+        run: ./gradlew dokkaHtml
+
+      - name: Create Documentation Pull Request
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          VERSION="${{ github.ref_name }}"
+          BRANCH="documentation-patch/$VERSION"
+          
+          git config user.email "github-actions@github.com"
+          git config user.name "github-actions"
+
+          git checkout -b $BRANCH
+          git add docs/
+          git commit -m "docs(dokka): patch docs for $VERSION"
+          git push -u origin $BRANCH
+          
+          gh pr create \
+              --title "docs(dokka): patch docs for $VERSION" \
+              --body "Adds published documentation for $VERSION" \
+              --base main \
+              --head "$BRANCH"
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Dokka Artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./docs-publishing/
+
+      - name: Deploy Dokka Artifact to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

@@ -1,10 +1,23 @@
 # netlib
-Wanderia's networking utility library.
+Kotlinx Serialization for Minecraft Payloads.
 
 ### Features
 - Kotlinx Serialization encoder/decoder for Minecraft's FriendlyByteBuf/PacketByteBuf.
-- Abstract `SerializedPacket` for easy packet creation.
+- Abstract `SerializedPayload` for easy packet creation.
 
 ### Developer Usage
-Usage samples can be found in the [`dev.wanderia.netlib.samples`](https://github.com/wanderia/netlib/tree/main/src/main/kotlin/dev/wanderia/netlib/sample/) package.\
 This project is intended to be included via Jar-in-Jar.
+netlib is available on the wanderia maven.
+```kotlin
+repositories {
+    maven("https://maven.wanderia.dev/releases") { name = "Wanderia" }
+}
+dependencies {
+    include("dev.wanderia:netlib:$version")
+    modImplementation("dev.wanderia:netlib:$version")
+}
+```
+See the [testmod](src/testmod/) for example usage.
+
+## Attribution
+Logo icon by [Iconoir](https://iconoir.com/) which is licensed under MIT.

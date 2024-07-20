@@ -1,5 +1,7 @@
 .gradle/
 .idea/
+.kotlin/
 build/
-run/
+docs-publishing/
+runs/
 *.iml

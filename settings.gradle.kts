@@ -9,9 +9,5 @@ pluginManagement {
 }
 
 dependencyResolutionManagement {
-    versionCatalogs {
-        create("libs") {
-            from(files("libs.versions.toml"))
-        }
-    }
+    versionCatalogs { create("libs") { from(files("libs.versions.toml")) } }
 }
