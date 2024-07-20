@@ -1,0 +1,79 @@
+$dokka.format:html-v1
+$dokka.linkExtension:html
+$dokka.location:dev.wanderia.netlib.format////PointingToDeclaration/netlib/dev.wanderia.netlib.format/index.html
+$dokka.location:dev.wanderia.netlib.format//WanderiaSerializersModule/#/PointingToDeclaration/netlib/dev.wanderia.netlib.format/-wanderia-serializers-module.html
+$dokka.location:dev.wanderia.netlib.format//decodeFrom/#net.minecraft.network.FriendlyByteBuf#kotlinx.serialization.DeserializationStrategy[TypeParam(bounds=[kotlin.Any?])]/PointingToDeclaration/netlib/dev.wanderia.netlib.format/decode-from.html
+$dokka.location:dev.wanderia.netlib.format//decodeFrom/#net.minecraft.network.FriendlyByteBuf/PointingToDeclaration/netlib/dev.wanderia.netlib.format/decode-from.html
+$dokka.location:dev.wanderia.netlib.format//encodeTo/#net.minecraft.network.FriendlyByteBuf#TypeParam(bounds=[kotlin.Any?])/PointingToDeclaration/netlib/dev.wanderia.netlib.format/encode-to.html
+$dokka.location:dev.wanderia.netlib.format//encodeTo/#net.minecraft.network.FriendlyByteBuf#kotlinx.serialization.SerializationStrategy[TypeParam(bounds=[kotlin.Any?])]#TypeParam(bounds=[kotlin.Any?])/PointingToDeclaration/netlib/dev.wanderia.netlib.format/encode-to.html
+$dokka.location:dev.wanderia.netlib.format/PacketByteBufDecoder///PointingToDeclaration/netlib/dev.wanderia.netlib.format/-packet-byte-buf-decoder/index.html
+$dokka.location:dev.wanderia.netlib.format/PacketByteBufDecoder/PacketByteBufDecoder/#net.minecraft.network.FriendlyByteBuf#kotlin.Int/PointingToDeclaration/netlib/dev.wanderia.netlib.format/-packet-byte-buf-decoder/-packet-byte-buf-decoder.html
+$dokka.location:dev.wanderia.netlib.format/PacketByteBufDecoder/beginStructure/#kotlinx.serialization.descriptors.SerialDescriptor/PointingToDeclaration/netlib/dev.wanderia.netlib.format/-packet-byte-buf-decoder/begin-structure.html
+$dokka.location:dev.wanderia.netlib.format/PacketByteBufDecoder/decodeBoolean/#/PointingToDeclaration/netlib/dev.wanderia.netlib.format/-packet-byte-buf-decoder/decode-boolean.html
+$dokka.location:dev.wanderia.netlib.format/PacketByteBufDecoder/decodeByte/#/PointingToDeclaration/netlib/dev.wanderia.netlib.format/-packet-byte-buf-decoder/decode-byte.html
+$dokka.location:dev.wanderia.netlib.format/PacketByteBufDecoder/decodeChar/#/PointingToDeclaration/netlib/dev.wanderia.netlib.format/-packet-byte-buf-decoder/decode-char.html
+$dokka.location:dev.wanderia.netlib.format/PacketByteBufDecoder/decodeCollectionSize/#kotlinx.serialization.descriptors.SerialDescriptor/PointingToDeclaration/netlib/dev.wanderia.netlib.format/-packet-byte-buf-decoder/decode-collection-size.html
+$dokka.location:dev.wanderia.netlib.format/PacketByteBufDecoder/decodeDouble/#/PointingToDeclaration/netlib/dev.wanderia.netlib.format/-packet-byte-buf-decoder/decode-double.html
+$dokka.location:dev.wanderia.netlib.format/PacketByteBufDecoder/decodeElementIndex/#kotlinx.serialization.descriptors.SerialDescriptor/PointingToDeclaration/netlib/dev.wanderia.netlib.format/-packet-byte-buf-decoder/decode-element-index.html
+$dokka.location:dev.wanderia.netlib.format/PacketByteBufDecoder/decodeEnum/#kotlinx.serialization.descriptors.SerialDescriptor/PointingToDeclaration/netlib/dev.wanderia.netlib.format/-packet-byte-buf-decoder/decode-enum.html
+$dokka.location:dev.wanderia.netlib.format/PacketByteBufDecoder/decodeFloat/#/PointingToDeclaration/netlib/dev.wanderia.netlib.format/-packet-byte-buf-decoder/decode-float.html
+$dokka.location:dev.wanderia.netlib.format/PacketByteBufDecoder/decodeInt/#/PointingToDeclaration/netlib/dev.wanderia.netlib.format/-packet-byte-buf-decoder/decode-int.html
+$dokka.location:dev.wanderia.netlib.format/PacketByteBufDecoder/decodeLong/#/PointingToDeclaration/netlib/dev.wanderia.netlib.format/-packet-byte-buf-decoder/decode-long.html
+$dokka.location:dev.wanderia.netlib.format/PacketByteBufDecoder/decodeNotNullMark/#/PointingToDeclaration/netlib/dev.wanderia.netlib.format/-packet-byte-buf-decoder/decode-not-null-mark.html
+$dokka.location:dev.wanderia.netlib.format/PacketByteBufDecoder/decodeSequentially/#/PointingToDeclaration/netlib/dev.wanderia.netlib.format/-packet-byte-buf-decoder/decode-sequentially.html
+$dokka.location:dev.wanderia.netlib.format/PacketByteBufDecoder/decodeShort/#/PointingToDeclaration/netlib/dev.wanderia.netlib.format/-packet-byte-buf-decoder/decode-short.html
+$dokka.location:dev.wanderia.netlib.format/PacketByteBufDecoder/decodeString/#/PointingToDeclaration/netlib/dev.wanderia.netlib.format/-packet-byte-buf-decoder/decode-string.html
+$dokka.location:dev.wanderia.netlib.format/PacketByteBufDecoder/serializersModule/#/PointingToDeclaration/netlib/dev.wanderia.netlib.format/-packet-byte-buf-decoder/serializers-module.html
+$dokka.location:dev.wanderia.netlib.format/PacketByteBufEncoder///PointingToDeclaration/netlib/dev.wanderia.netlib.format/-packet-byte-buf-encoder/index.html
+$dokka.location:dev.wanderia.netlib.format/PacketByteBufEncoder/PacketByteBufEncoder/#net.minecraft.network.FriendlyByteBuf/PointingToDeclaration/netlib/dev.wanderia.netlib.format/-packet-byte-buf-encoder/-packet-byte-buf-encoder.html
+$dokka.location:dev.wanderia.netlib.format/PacketByteBufEncoder/beginCollection/#kotlinx.serialization.descriptors.SerialDescriptor#kotlin.Int/PointingToDeclaration/netlib/dev.wanderia.netlib.format/-packet-byte-buf-encoder/begin-collection.html
+$dokka.location:dev.wanderia.netlib.format/PacketByteBufEncoder/encodeBoolean/#kotlin.Boolean/PointingToDeclaration/netlib/dev.wanderia.netlib.format/-packet-byte-buf-encoder/encode-boolean.html
+$dokka.location:dev.wanderia.netlib.format/PacketByteBufEncoder/encodeByte/#kotlin.Byte/PointingToDeclaration/netlib/dev.wanderia.netlib.format/-packet-byte-buf-encoder/encode-byte.html
+$dokka.location:dev.wanderia.netlib.format/PacketByteBufEncoder/encodeChar/#kotlin.Char/PointingToDeclaration/netlib/dev.wanderia.netlib.format/-packet-byte-buf-encoder/encode-char.html
+$dokka.location:dev.wanderia.netlib.format/PacketByteBufEncoder/encodeDouble/#kotlin.Double/PointingToDeclaration/netlib/dev.wanderia.netlib.format/-packet-byte-buf-encoder/encode-double.html
+$dokka.location:dev.wanderia.netlib.format/PacketByteBufEncoder/encodeEnum/#kotlinx.serialization.descriptors.SerialDescriptor#kotlin.Int/PointingToDeclaration/netlib/dev.wanderia.netlib.format/-packet-byte-buf-encoder/encode-enum.html
+$dokka.location:dev.wanderia.netlib.format/PacketByteBufEncoder/encodeFloat/#kotlin.Float/PointingToDeclaration/netlib/dev.wanderia.netlib.format/-packet-byte-buf-encoder/encode-float.html
+$dokka.location:dev.wanderia.netlib.format/PacketByteBufEncoder/encodeInt/#kotlin.Int/PointingToDeclaration/netlib/dev.wanderia.netlib.format/-packet-byte-buf-encoder/encode-int.html
+$dokka.location:dev.wanderia.netlib.format/PacketByteBufEncoder/encodeLong/#kotlin.Long/PointingToDeclaration/netlib/dev.wanderia.netlib.format/-packet-byte-buf-encoder/encode-long.html
+$dokka.location:dev.wanderia.netlib.format/PacketByteBufEncoder/encodeNotNullMark/#/PointingToDeclaration/netlib/dev.wanderia.netlib.format/-packet-byte-buf-encoder/encode-not-null-mark.html
+$dokka.location:dev.wanderia.netlib.format/PacketByteBufEncoder/encodeNull/#/PointingToDeclaration/netlib/dev.wanderia.netlib.format/-packet-byte-buf-encoder/encode-null.html
+$dokka.location:dev.wanderia.netlib.format/PacketByteBufEncoder/encodeShort/#kotlin.Short/PointingToDeclaration/netlib/dev.wanderia.netlib.format/-packet-byte-buf-encoder/encode-short.html
+$dokka.location:dev.wanderia.netlib.format/PacketByteBufEncoder/encodeString/#kotlin.String/PointingToDeclaration/netlib/dev.wanderia.netlib.format/-packet-byte-buf-encoder/encode-string.html
+$dokka.location:dev.wanderia.netlib.format/PacketByteBufEncoder/serializersModule/#/PointingToDeclaration/netlib/dev.wanderia.netlib.format/-packet-byte-buf-encoder/serializers-module.html
+$dokka.location:dev.wanderia.netlib.payload.api////PointingToDeclaration/netlib/dev.wanderia.netlib.payload.api/index.html
+$dokka.location:dev.wanderia.netlib.payload.api/PayloadChannel.ClientboundConfiguration///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}netlib/dev.wanderia.netlib.payload.api/-payload-channel/-clientbound-configuration/index.html
+$dokka.location:dev.wanderia.netlib.payload.api/PayloadChannel.ClientboundPlay///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}netlib/dev.wanderia.netlib.payload.api/-payload-channel/-clientbound-play/index.html
+$dokka.location:dev.wanderia.netlib.payload.api/PayloadChannel.ServerboundConfiguration///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}netlib/dev.wanderia.netlib.payload.api/-payload-channel/-serverbound-configuration/index.html
+$dokka.location:dev.wanderia.netlib.payload.api/PayloadChannel.ServerboundPlay///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}netlib/dev.wanderia.netlib.payload.api/-payload-channel/-serverbound-play/index.html
+$dokka.location:dev.wanderia.netlib.payload.api/PayloadChannel///PointingToDeclaration/netlib/dev.wanderia.netlib.payload.api/-payload-channel/index.html
+$dokka.location:dev.wanderia.netlib.payload.api/PayloadChannel/entries/#/PointingToDeclaration/netlib/dev.wanderia.netlib.payload.api/-payload-channel/entries.html
+$dokka.location:dev.wanderia.netlib.payload.api/PayloadChannel/valueOf/#kotlin.String/PointingToDeclaration/netlib/dev.wanderia.netlib.payload.api/-payload-channel/value-of.html
+$dokka.location:dev.wanderia.netlib.payload.api/PayloadChannel/values/#/PointingToDeclaration/netlib/dev.wanderia.netlib.payload.api/-payload-channel/values.html
+$dokka.location:dev.wanderia.netlib.payload.api/SerializedPayload.Companion///PointingToDeclaration/netlib/dev.wanderia.netlib.payload.api/-serialized-payload/-companion/index.html
+$dokka.location:dev.wanderia.netlib.payload.api/SerializedPayload.Companion/createCodec/#/PointingToDeclaration/netlib/dev.wanderia.netlib.payload.api/-serialized-payload/-companion/create-codec.html
+$dokka.location:dev.wanderia.netlib.payload.api/SerializedPayload///PointingToDeclaration/netlib/dev.wanderia.netlib.payload.api/-serialized-payload/index.html
+$dokka.location:dev.wanderia.netlib.payload.api/SerializedPayload/SerializedPayload/#/PointingToDeclaration/netlib/dev.wanderia.netlib.payload.api/-serialized-payload/-serialized-payload.html
+$dokka.location:dev.wanderia.netlib.payload.api/SerializedPayload/codec/#/PointingToDeclaration/netlib/dev.wanderia.netlib.payload.api/-serialized-payload/codec.html
+$dokka.location:dev.wanderia.netlib.payload.api/SerializedPayloadConfiguration///PointingToDeclaration/netlib/dev.wanderia.netlib.payload.api/-serialized-payload-configuration/index.html
+$dokka.location:dev.wanderia.netlib.payload.api/SerializedPayloadConfiguration/channels/#/PointingToDeclaration/netlib/dev.wanderia.netlib.payload.api/-serialized-payload-configuration/channels.html
+$dokka.location:dev.wanderia.netlib.payload.api/SerializedPayloadConfiguration/payloadCodec/#/PointingToDeclaration/netlib/dev.wanderia.netlib.payload.api/-serialized-payload-configuration/payload-codec.html
+$dokka.location:dev.wanderia.netlib.payload.api/SerializedPayloadConfiguration/payloadId/#/PointingToDeclaration/netlib/dev.wanderia.netlib.payload.api/-serialized-payload-configuration/payload-id.html
+$dokka.location:dev.wanderia.netlib.serializers////PointingToDeclaration/netlib/dev.wanderia.netlib.serializers/index.html
+$dokka.location:dev.wanderia.netlib.serializers/IdentifierSerializer///PointingToDeclaration/netlib/dev.wanderia.netlib.serializers/-identifier-serializer/index.html
+$dokka.location:dev.wanderia.netlib.serializers/IdentifierSerializer/descriptor/#/PointingToDeclaration/netlib/dev.wanderia.netlib.serializers/-identifier-serializer/descriptor.html
+$dokka.location:dev.wanderia.netlib.serializers/IdentifierSerializer/deserialize/#kotlinx.serialization.encoding.Decoder/PointingToDeclaration/netlib/dev.wanderia.netlib.serializers/-identifier-serializer/deserialize.html
+$dokka.location:dev.wanderia.netlib.serializers/IdentifierSerializer/serialize/#kotlinx.serialization.encoding.Encoder#net.minecraft.resources.ResourceLocation/PointingToDeclaration/netlib/dev.wanderia.netlib.serializers/-identifier-serializer/serialize.html
+$dokka.location:dev.wanderia.netlib.serializers/UUIDSerializer///PointingToDeclaration/netlib/dev.wanderia.netlib.serializers/-u-u-i-d-serializer/index.html
+$dokka.location:dev.wanderia.netlib.serializers/UUIDSerializer/descriptor/#/PointingToDeclaration/netlib/dev.wanderia.netlib.serializers/-u-u-i-d-serializer/descriptor.html
+$dokka.location:dev.wanderia.netlib.serializers/UUIDSerializer/deserialize/#kotlinx.serialization.encoding.Decoder/PointingToDeclaration/netlib/dev.wanderia.netlib.serializers/-u-u-i-d-serializer/deserialize.html
+$dokka.location:dev.wanderia.netlib.serializers/UUIDSerializer/serialize/#kotlinx.serialization.encoding.Encoder#java.util.UUID/PointingToDeclaration/netlib/dev.wanderia.netlib.serializers/-u-u-i-d-serializer/serialize.html
+$dokka.location:dev.wanderia.netlib////PointingToDeclaration/netlib/dev.wanderia.netlib/index.html
+$dokka.location:dev.wanderia.netlib/NetLibEntrypoint///PointingToDeclaration/netlib/dev.wanderia.netlib/-net-lib-entrypoint/index.html
+$dokka.location:dev.wanderia.netlib/NetLibEntrypoint/register/#kotlin.Function1[kotlin.collections.List[dev.wanderia.netlib.payload.api.SerializedPayloadConfiguration[*]],kotlin.Unit]/PointingToDeclaration/netlib/dev.wanderia.netlib/-net-lib-entrypoint/register.html
+$dokka.location:dev.wanderia.netlib/WanderiaNetLib///PointingToDeclaration/netlib/dev.wanderia.netlib/-wanderia-net-lib/index.html
+$dokka.location:dev.wanderia.netlib/WanderiaNetLib/onInitialize/#/PointingToDeclaration/netlib/dev.wanderia.netlib/-wanderia-net-lib/on-initialize.html
+dev.wanderia.netlib
+dev.wanderia.netlib.format
+dev.wanderia.netlib.payload.api
+dev.wanderia.netlib.serializers
+
