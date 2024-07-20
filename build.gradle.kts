@@ -27,7 +27,7 @@ buildscript {
 
 group = "dev.wanderia"
 
-version = "1.1.0"
+version = "1.1.1"
 
 repositories { mavenCentral() }
 
@@ -91,7 +91,9 @@ val enableDCEVM: Boolean =
 
 val testmod: SourceSet by
     sourceSets.creating {
+        compileClasspath += sourceSets.main.get().compileClasspath
         compileClasspath += sourceSets.main.get().output
+        runtimeClasspath += sourceSets.main.get().runtimeClasspath
         runtimeClasspath += sourceSets.main.get().output
     }
 
