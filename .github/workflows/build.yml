@@ -33,7 +33,7 @@ jobs:
         run: chmod +x gradlew
 
       - name: Build and Test
-        run: ./gradlew build test spotlessCheck
+        run: ./gradlew build test spotlessCheck koverXmlReport
 
   publish:
     name: Publish

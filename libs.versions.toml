@@ -5,7 +5,9 @@ fabricApi = "0.100.7+1.21" # https://github.com/FabricMC/fabric/releases
 fabricKotlin = "1.11.0+kotlin.2.0.0" # https://github.com/FabricMC/fabric-language-kotlin/releases
 fabricLoader = "0.16.0" # https://github.com/FabricMC/fabric-loader/releases
 fabricLoom = "1.7-SNAPSHOT" # https://github.com/FabricMC/fabric-loom/releases
+junit-params = "5.10.1" # check which version of junit-jupiter-api/engine kotlin-test adds
 kotlin = "2.0.0"
+kotlinx-kover = "0.8.3" #https://github.com/Kotlin/kotlinx-kover/releases
 kotlinxSerialization = "1.7.1" # https://github.com/Kotlin/kotlinx.serialization/releases
 minecraft = "1.21"
 minotaur = "2.8.7" # https://github.com/modrinth/minotaur/releases
@@ -16,7 +18,9 @@ dokka-pluginBase = { group = "org.jetbrains.dokka", name = "dokka-base", version
 dokka-pluginVersioning = { group = "org.jetbrains.dokka", name = "versioning-plugin", version.ref = "dokka" }
 fabric-kotlin = { group = "net.fabricmc", name = "fabric-language-kotlin", version.ref = "fabricKotlin" }
 fabric-loader = { group = "net.fabricmc", name = "fabric-loader", version.ref = "fabricLoader" }
+junit-params = { group = "org.junit.jupiter", name = "junit-jupiter-params", version.ref = "junit-params" }
 kotlin-test = { group = "org.jetbrains.kotlin", name = "kotlin-test" }
+kotlin-test-junit5 = { group = "org.jetbrains.kotlin", name = "kotlin-test-junit5" }
 kotlinx-serializationCore = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-core", version.ref = "kotlinxSerialization" }
 minecraft = { group = "com.mojang", name = "minecraft", version.ref = "minecraft" }
 
@@ -25,6 +29,7 @@ changelog = { id = "org.jetbrains.changelog", version.ref = "changelog" }
 dokka = { id = "org.jetbrains.dokka", version.ref = "dokka" }
 kotlin = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+kotlinx-kover = { id = "org.jetbrains.kotlinx.kover", version.ref = "kotlinx-kover" }
 loom = { id = "fabric-loom", version.ref = "fabricLoom" }
 minotaur = { id = "com.modrinth.minotaur", version.ref = "minotaur" }
 spotless = { id = "com.diffplug.spotless", version.ref = "spotless" }

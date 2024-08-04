@@ -14,6 +14,7 @@ plugins {
     alias(libs.plugins.changelog)
     alias(libs.plugins.dokka)
     alias(libs.plugins.minotaur)
+    alias(libs.plugins.kotlinx.kover)
 
     `maven-publish`
 }
@@ -38,7 +39,10 @@ dependencies {
     modImplementation(libs.fabric.loader)
     modImplementation(fabricApi.module("fabric-networking-api-v1", libs.versions.fabricApi.get()))
     implementation(libs.kotlinx.serializationCore)
+
     testImplementation(libs.kotlin.test)
+    testImplementation(libs.kotlin.test.junit5)
+    testImplementation(libs.junit.params)
 }
 
 tasks {

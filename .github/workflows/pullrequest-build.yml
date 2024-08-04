@@ -27,4 +27,4 @@ jobs:
         run: chmod +x gradlew
 
       - name: Build, Test, and Check
-        run: ./gradlew build test spotlessCheck
+        run: ./gradlew build test spotlessCheck koverXmlReport
