@@ -28,7 +28,7 @@ buildscript {
 
 group = "dev.wanderia"
 
-version = "1.1.0"
+version = "1.2.0"
 
 repositories { mavenCentral() }
 
@@ -108,6 +108,7 @@ loom {
             if (enableDCEVM) {
                 vmArgs("-XX:+AllowEnhancedClassRedefinition")
             }
+            property("dev.wanderia.netlib.debug", "true")
             ideConfigGenerated(name.contains("testmod"))
             runDir("runs/$name")
         }

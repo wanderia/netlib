@@ -17,10 +17,13 @@ import net.fabricmc.loader.api.FabricLoader
 import net.minecraft.network.FriendlyByteBuf
 import net.minecraft.network.codec.StreamCodec
 import org.jetbrains.annotations.ApiStatus
+import org.slf4j.LoggerFactory
 
 @ExperimentalSerializationApi
 @ApiStatus.Internal
 public object WanderiaNetLib : ModInitializer {
+
+    private val logger = LoggerFactory.getLogger("netlib")
 
     @Suppress("UNCHECKED_CAST")
     private fun <T : SerializedPayload<T>> register(
@@ -32,37 +35,50 @@ public object WanderiaNetLib : ModInitializer {
                     PayloadTypeRegistry.configurationC2S()
                         .register(
                             configuration.payloadId,
-                            configuration.payloadCodec as StreamCodec<in FriendlyByteBuf, T>
+                            configuration.payloadCodec as StreamCodec<in FriendlyByteBuf, T>,
                         )
                 PayloadChannel.ServerboundPlay ->
                     PayloadTypeRegistry.playC2S()
                         .register(
                             configuration.payloadId,
-                            configuration.payloadCodec as StreamCodec<in FriendlyByteBuf, T>
+                            configuration.payloadCodec as StreamCodec<in FriendlyByteBuf, T>,
                         )
                 PayloadChannel.ClientboundConfiguration ->
                     PayloadTypeRegistry.configurationS2C()
                         .register(
                             configuration.payloadId,
-                            configuration.payloadCodec as StreamCodec<in FriendlyByteBuf, T>
+                            configuration.payloadCodec as StreamCodec<in FriendlyByteBuf, T>,
                         )
                 PayloadChannel.ClientboundPlay ->
                     PayloadTypeRegistry.playS2C()
                         .register(
                             configuration.payloadId,
-                            configuration.payloadCodec as StreamCodec<in FriendlyByteBuf, T>
+                            configuration.payloadCodec as StreamCodec<in FriendlyByteBuf, T>,
                         )
             }
         }
     }
 
     override fun onInitialize() {
-        FabricLoader.getInstance()
-            .getEntrypoints("waderia-netlib", NetLibEntrypoint::class.java)
-            .forEach { entry ->
-                entry.register { payloads: List<SerializedPayloadConfiguration<*>> ->
-                    payloads.forEach { payload -> register(payload) }
+        logger.info("[netlib] trans rights are human rights!")
+        val debug = System.getProperty("dev.wanderia.netlib.debug", "false") == "true"
+        val entrypoints =
+            FabricLoader.getInstance().getEntrypoints(ENTRYPOINT_NAME, NetLibEntrypoint::class.java)
+        if (debug) {
+            logger.info("[netlib] Found ${entrypoints.size} entrypoints.")
+        }
+
+        entrypoints.forEach { entry ->
+            entry.register { payloads: List<SerializedPayloadConfiguration<*>> ->
+                payloads.forEach { payload ->
+                    if (debug) {
+                        logger.info(
+                            "[netlib] Registering ${payload::class.qualifiedName} on ${payload.channels}."
+                        )
+                    }
+                    register(payload)
                 }
             }
+        }
     }
 }

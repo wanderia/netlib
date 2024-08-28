@@ -34,7 +34,7 @@ class EncodeDecodeTests {
         val long: Long?,
         val short: Short?,
         val string: String?,
-        val enum: PayloadChannel?
+        val enum: PayloadChannel?,
     )
 
     @Serializable
@@ -48,7 +48,7 @@ class EncodeDecodeTests {
         val longCollection: List<Long>,
         val shortCollection: List<Short>,
         val stringCollection: List<String>,
-        val enumCollection: List<PayloadChannel>
+        val enumCollection: List<PayloadChannel>,
     )
 
     @Serializable
@@ -149,7 +149,7 @@ class EncodeDecodeTests {
                         0.toShort(),
                         (-1).toShort(),
                         1.toShort(),
-                        (Short.MIN_VALUE..Short.MAX_VALUE).random().toShort()
+                        (Short.MIN_VALUE..Short.MAX_VALUE).random().toShort(),
                     )[index.coerceIn(0, 4)],
                 string = listOf(null, "", UUID.randomUUID().toString())[index.coerceIn(0, 2)],
                 enum =
@@ -158,7 +158,7 @@ class EncodeDecodeTests {
                         PayloadChannel.ClientboundPlay,
                         PayloadChannel.ServerboundPlay,
                         PayloadChannel.ClientboundConfiguration,
-                        PayloadChannel.ServerboundConfiguration
+                        PayloadChannel.ServerboundConfiguration,
                     )[index.coerceIn(0, 4)],
             )
 
@@ -179,7 +179,7 @@ class EncodeDecodeTests {
                         0.toShort(),
                         (-1).toShort(),
                         1.toShort(),
-                        (Short.MIN_VALUE..Short.MAX_VALUE).random().toShort()
+                        (Short.MIN_VALUE..Short.MAX_VALUE).random().toShort(),
                     ),
                 stringCollection = listOf("", UUID.randomUUID().toString()),
                 enumCollection =
@@ -187,7 +187,7 @@ class EncodeDecodeTests {
                         PayloadChannel.ClientboundPlay,
                         PayloadChannel.ServerboundPlay,
                         PayloadChannel.ClientboundConfiguration,
-                        PayloadChannel.ServerboundConfiguration
+                        PayloadChannel.ServerboundConfiguration,
                     ),
             )
 
@@ -202,7 +202,7 @@ class EncodeDecodeTests {
                         randomDataA(Random.nextInt(5)),
                         randomDataA(Random.nextInt(5)),
                         randomDataA(Random.nextInt(5)),
-                        randomDataA(Random.nextInt(5))
+                        randomDataA(Random.nextInt(5)),
                     ),
                 collectionB =
                     listOf(
@@ -210,7 +210,7 @@ class EncodeDecodeTests {
                         randomDataB(),
                         randomDataB(),
                         randomDataB(),
-                        randomDataB()
+                        randomDataB(),
                     ),
             )
     }

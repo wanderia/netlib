@@ -11,10 +11,6 @@ import dev.wanderia.netlib.payload.api.PayloadChannel
 import dev.wanderia.testmod.payloads.TestModPayload
 import java.util.*
 import net.fabricmc.api.ModInitializer
-import net.fabricmc.fabric.api.client.networking.v1.ClientConfigurationConnectionEvents
-import net.fabricmc.fabric.api.client.networking.v1.ClientConfigurationNetworking
-import net.fabricmc.fabric.api.client.networking.v1.ClientPlayConnectionEvents
-import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking
 import net.fabricmc.fabric.api.networking.v1.ServerConfigurationConnectionEvents
 import net.fabricmc.fabric.api.networking.v1.ServerConfigurationNetworking
 import net.fabricmc.fabric.api.networking.v1.ServerPlayConnectionEvents
@@ -43,29 +39,9 @@ object TestMod : ModInitializer {
                 ServerConfigurationNetworking.send(handler, dummyPayload)
             }
         }
-
-        ClientPlayConnectionEvents.JOIN.register { _, _, _ ->
-            ClientPlayNetworking.registerReceiver(TestModPayload.payloadId) { payload, _ ->
-                println(payload.toString())
-            }
-
-            if (ClientPlayNetworking.canSend(TestModPayload.payloadId)) {
-                ClientPlayNetworking.send(dummyPayload)
-            }
-        }
-
-        ClientConfigurationConnectionEvents.START.register { _, _ ->
-            ClientConfigurationNetworking.registerReceiver(TestModPayload.payloadId) { payload, _ ->
-                println(payload.toString())
-            }
-
-            if (ClientConfigurationNetworking.canSend(TestModPayload.payloadId)) {
-                ClientConfigurationNetworking.send(dummyPayload)
-            }
-        }
     }
 
-    private val dummyPayload: TestModPayload =
+    public val dummyPayload: TestModPayload =
         TestModPayload(
             testBoolean = true,
             testByte = 0b0,
@@ -79,6 +55,6 @@ object TestMod : ModInitializer {
             testEnum = PayloadChannel.ClientboundPlay,
             testCollection = PayloadChannel.entries,
             testId = TestModPayload.payloadId.id,
-            testUUID = UUID.randomUUID()
+            testUUID = UUID.randomUUID(),
         )
 }

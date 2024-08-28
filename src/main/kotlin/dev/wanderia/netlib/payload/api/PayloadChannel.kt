@@ -18,5 +18,5 @@ public enum class PayloadChannel {
     ClientboundConfiguration,
 
     /** S2C during the play phase. */
-    ClientboundPlay
+    ClientboundPlay,
 }

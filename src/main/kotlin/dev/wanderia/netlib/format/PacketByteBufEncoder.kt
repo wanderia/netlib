@@ -66,7 +66,7 @@ public class PacketByteBufEncoder(private val buf: FriendlyByteBuf) : AbstractEn
 
     override fun beginCollection(
         descriptor: SerialDescriptor,
-        collectionSize: Int
+        collectionSize: Int,
     ): CompositeEncoder {
         encodeInt(collectionSize)
         return this
