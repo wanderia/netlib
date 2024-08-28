@@ -10,6 +10,8 @@ package dev.wanderia.netlib
 import dev.wanderia.netlib.payload.api.SerializedPayloadConfiguration
 import kotlinx.serialization.ExperimentalSerializationApi
 
+public const val ENTRYPOINT_NAME: String = "wanderia-netlib"
+
 @ExperimentalSerializationApi
 public fun interface NetLibEntrypoint {
     public fun register(register: (List<SerializedPayloadConfiguration<*>>) -> Unit)
