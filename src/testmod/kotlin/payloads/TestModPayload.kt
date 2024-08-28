@@ -34,7 +34,7 @@ data class TestModPayload(
     val testEnum: PayloadChannel,
     val testCollection: Collection<PayloadChannel>,
     @Contextual val testId: ResourceLocation,
-    @Contextual val testUUID: UUID
+    @Contextual val testUUID: UUID,
 ) : SerializedPayload<TestModPayload>() {
     override fun codec(): StreamCodec<RegistryFriendlyByteBuf, TestModPayload> = payloadCodec
 

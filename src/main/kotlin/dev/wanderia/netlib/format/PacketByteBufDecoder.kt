@@ -19,7 +19,7 @@ import net.minecraft.network.FriendlyByteBuf
 @ExperimentalSerializationApi
 public class PacketByteBufDecoder(
     private val buf: FriendlyByteBuf,
-    private var elementsCount: Int = 0
+    private var elementsCount: Int = 0,
 ) : AbstractDecoder() {
     private var elementIndex: Int = 0
     override val serializersModule: SerializersModule = WanderiaSerializersModule()

@@ -25,7 +25,7 @@ public abstract class SerializedPayload<T : SerializedPayload<T>> : CustomPacket
             StreamCodec<RegistryFriendlyByteBuf, T> =
             CustomPacketPayload.codec(
                 { value, buffer -> encodeTo<T>(buffer, value) },
-                { buffer -> decodeFrom<T>(buffer) }
+                { buffer -> decodeFrom<T>(buffer) },
             )
     }
 }

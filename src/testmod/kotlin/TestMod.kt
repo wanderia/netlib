@@ -55,6 +55,6 @@ object TestMod : ModInitializer {
             testEnum = PayloadChannel.ClientboundPlay,
             testCollection = PayloadChannel.entries,
             testId = TestModPayload.payloadId.id,
-            testUUID = UUID.randomUUID()
+            testUUID = UUID.randomUUID(),
         )
 }
