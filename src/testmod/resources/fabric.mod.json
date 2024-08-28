@@ -10,6 +10,12 @@
         "value": "dev.wanderia.testmod.TestMod"
       }
     ],
+    "client": [
+      {
+        "adapter": "kotlin",
+        "value": "dev.wanderia.testmod.TestModClient"
+      }
+    ],
     "wanderia-netlib": [
       {
         "adapter": "kotlin",

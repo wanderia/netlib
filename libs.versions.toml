@@ -1,17 +1,17 @@
 [versions]
 dokka = "1.9.20" # https://github.com/Kotlin/dokka/releases
 changelog = "2.2.1" # https://github.com/JetBrains/gradle-changelog-plugin/releases
-fabricApi = "0.100.7+1.21" # https://github.com/FabricMC/fabric/releases
-fabricKotlin = "1.11.0+kotlin.2.0.0" # https://github.com/FabricMC/fabric-language-kotlin/releases
-fabricLoader = "0.16.0" # https://github.com/FabricMC/fabric-loader/releases
+fabricApi = "0.103.0+1.21.1" # https://github.com/FabricMC/fabric/releases
+fabricKotlin = "1.12.1+kotlin.2.0.20" # https://github.com/FabricMC/fabric-language-kotlin/releases
+fabricLoader = "0.16.3" # https://github.com/FabricMC/fabric-loader/releases
 fabricLoom = "1.7-SNAPSHOT" # https://github.com/FabricMC/fabric-loom/releases
 junit-params = "5.10.1" # check which version of junit-jupiter-api/engine kotlin-test adds
-kotlin = "2.0.0"
-kotlinx-kover = "0.8.3" #https://github.com/Kotlin/kotlinx-kover/releases
+kotlin = "2.0.20"
+kotlinx-kover = "0.8.3" # https://github.com/Kotlin/kotlinx-kover/releases
 kotlinxSerialization = "1.7.1" # https://github.com/Kotlin/kotlinx.serialization/releases
-minecraft = "1.21"
+minecraft = "1.21.1"
 minotaur = "2.8.7" # https://github.com/modrinth/minotaur/releases
-spotless = "7.0.0.BETA1" # https://github.com/diffplug/spotless/blob/main/plugin-gradle/CHANGES.md
+spotless = "7.0.0.BETA2" # https://github.com/diffplug/spotless/blob/main/plugin-gradle/CHANGES.md
 
 [libraries]
 dokka-pluginBase = { group = "org.jetbrains.dokka", name = "dokka-base", version.ref = "dokka" }
