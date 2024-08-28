@@ -108,6 +108,7 @@ loom {
             if (enableDCEVM) {
                 vmArgs("-XX:+AllowEnhancedClassRedefinition")
             }
+            property("dev.wanderia.netlib.debug", "true")
             ideConfigGenerated(name.contains("testmod"))
             runDir("runs/$name")
         }
