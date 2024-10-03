@@ -7,6 +7,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+### Changed
+
+### Deprecated
+
+### Removed
+
+### Fixed
+
+### Security
+
+## [1.2.0] - 2024-08-28
+
+### Added
+
 - Debug log lines to print payload info when initializing.
 
 ### Changed
@@ -19,15 +33,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Updated `spotless` from `7.0.0.BETA1` to `7.0.0.BETA2`
 - Moved use of client networking and events to a `client` entrypoint. (TestMod)
 
-### Deprecated
-
-### Removed
-
 ### Fixed
 
 - Broken custom entrypoint.
-
-### Security
 
 ## [1.1.0] - 2024-07-20
 
