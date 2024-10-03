@@ -109,6 +109,7 @@ jobs:
           git config user.name "github-actions"
 
           git checkout -b $BRANCH
+          git add CHANGELOG.md
           git add docs/
           git commit -m "docs(dokka): patch docs and changelog for $VERSION"
           git push -u origin $BRANCH
