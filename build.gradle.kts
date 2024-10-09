@@ -46,6 +46,7 @@ changelog {
 modrinth {
     token = System.getenv("MODRINTH_TOKEN")
     debugMode = System.getenv("MODRINTH_DEBUG") == "1"
+    projectId = "netlib"
     syncBodyFrom = rootProject.file("README.md").readText()
 }
 
