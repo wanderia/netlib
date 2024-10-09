@@ -1,35 +1,50 @@
 [versions]
-dokka = "1.9.20" # https://github.com/Kotlin/dokka/releases
+dokka = "2.0.0-Beta" # https://github.com/Kotlin/dokka/releases
 changelog = "2.2.1" # https://github.com/JetBrains/gradle-changelog-plugin/releases
-fabricApi = "0.103.0+1.21.1" # https://github.com/FabricMC/fabric/releases
-fabricKotlin = "1.12.1+kotlin.2.0.20" # https://github.com/FabricMC/fabric-language-kotlin/releases
-fabricLoader = "0.16.3" # https://github.com/FabricMC/fabric-loader/releases
+fabricApi = "0.105.0+1.21.1" # https://github.com/FabricMC/fabric/releases
+fabricKotlin = "1.12.2+kotlin.2.0.20" # https://github.com/FabricMC/fabric-language-kotlin/releases
+fabricLoader = "0.16.5" # https://github.com/FabricMC/fabric-loader/releases
 fabricLoom = "1.7-SNAPSHOT" # https://github.com/FabricMC/fabric-loom/releases
 junit-params = "5.10.1" # check which version of junit-jupiter-api/engine kotlin-test adds
 kotlin = "2.0.20"
+kotlinforforge = "5.5.0" # https://github.com/thedarkcolour/KotlinForForge/tree/site/thedarkcolour/kotlinforforge-neoforge
 kotlinx-kover = "0.8.3" # https://github.com/Kotlin/kotlinx-kover/releases
-kotlinxSerialization = "1.7.1" # https://github.com/Kotlin/kotlinx.serialization/releases
+kotlinxSerialization = "1.7.3" # https://github.com/Kotlin/kotlinx.serialization/releases
 minecraft = "1.21.1"
+neoForge = "21.1.66" # https://projects.neoforged.net/neoforged/neoforge
+neoGradle = "7.0.165" # https://projects.neoforged.net/neoforged/neogradle
 minotaur = "2.8.7" # https://github.com/modrinth/minotaur/releases
+parchment = "2024.07.28" # https://parchmentmc.org/docs/getting-started
 spotless = "7.0.0.BETA2" # https://github.com/diffplug/spotless/blob/main/plugin-gradle/CHANGES.md
 
 [libraries]
-dokka-pluginBase = { group = "org.jetbrains.dokka", name = "dokka-base", version.ref = "dokka" }
-dokka-pluginVersioning = { group = "org.jetbrains.dokka", name = "versioning-plugin", version.ref = "dokka" }
+dokka-gradlePlugin = { group = "org.jetbrains.dokka", name = "dokka-gradle-plugin", version.ref = "dokka" }
+dokka-versioning = { group = "org.jetbrains.dokka", name = "versioning-plugin" }
 fabric-kotlin = { group = "net.fabricmc", name = "fabric-language-kotlin", version.ref = "fabricKotlin" }
 fabric-loader = { group = "net.fabricmc", name = "fabric-loader", version.ref = "fabricLoader" }
 junit-params = { group = "org.junit.jupiter", name = "junit-jupiter-params", version.ref = "junit-params" }
+kotlinforforge = { group = "thedarkcolour", name = "kotlinforforge-neoforge", version.ref = "kotlinforforge" }
+kotlin-gradlePlugin = { group = "org.jetbrains.kotlin.jvm", name = "org.jetbrains.kotlin.jvm.gradle.plugin", version.ref = "kotlin" }
 kotlin-test = { group = "org.jetbrains.kotlin", name = "kotlin-test" }
 kotlin-test-junit5 = { group = "org.jetbrains.kotlin", name = "kotlin-test-junit5" }
 kotlinx-serializationCore = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-core", version.ref = "kotlinxSerialization" }
 minecraft = { group = "com.mojang", name = "minecraft", version.ref = "minecraft" }
+neoforge = { group = "net.neoforged", name = "neoforge", version.ref = "neoForge" }
+parchment-fabric = { group = "org.parchmentmc.data", name = "parchment-1.21", version.ref = "parchment" }
 
 [plugins]
 changelog = { id = "org.jetbrains.changelog", version.ref = "changelog" }
 dokka = { id = "org.jetbrains.dokka", version.ref = "dokka" }
+dokka-javadoc = { id = "org.jetbrains.dokka-javadoc", version.ref = "dokka" }
 kotlin = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 kotlinx-kover = { id = "org.jetbrains.kotlinx.kover", version.ref = "kotlinx-kover" }
 loom = { id = "fabric-loom", version.ref = "fabricLoom" }
 minotaur = { id = "com.modrinth.minotaur", version.ref = "minotaur" }
+neogradle = { id = "net.neoforged.gradle.userdev", version.ref = "neoGradle" }
 spotless = { id = "com.diffplug.spotless", version.ref = "spotless" }
+
+# custom plugins, in buildLogic/
+loader-common = { id = "loader-common" }
+loader-dokka = { id = "loader-dokka" }
+loader-runtime = { id = "loader-runtime" }

@@ -80,23 +80,31 @@ jobs:
       - name: Publish to Modrinth
         env:
           MODRINTH_TOKEN: ${{ secrets.MODRINTH_TOKEN }}
-        run: ./gradlew build modrinth modrinthSyncBody
+        run: ./gradlew modrinthSyncBody :mod:fabric:modrinth :mod:neoforge:modrinth
 
       - name: Publish to GitHub
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          ./gradlew copySubJars
+          
           CHANGELOG='${{ steps.changelog.outputs.changelog }}'
           NL=$'\n'
           CHANGELOG=${CHANGELOG//$'\\n'/"${NL}"}
           echo "$CHANGELOG" >> "notes.txt"
           gh release create ${{ github.ref_name }} build/libs/**.jar --notes-file notes.txt
 
+      - name: Publish to Maven
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        run: ./gradlew publish
+
       - name: Patch Changelog
         run: ./gradlew patchChangelog
 
-      - name: Build Documentation (DokkaHtml)
-        run: ./gradlew dokkaHtml
+      - name: Build Documentation (Dokka)
+        run: ./gradlew dokkaGenerate
 
       - name: Create Documentation Pull Request
         env:
@@ -111,7 +119,7 @@ jobs:
           git checkout -b $BRANCH
           git add CHANGELOG.md
           git add docs/
-          git commit -m "docs(dokka): patch docs and changelog for $VERSION"
+          git commit -m "docs: patch docs and changelog for $VERSION"
           git push -u origin $BRANCH
           
           gh pr create \

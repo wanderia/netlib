@@ -7,13 +7,31 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- NeoForge runtime target
+- (NeoForge) `PayloadRegistrar.netlibPayload` extension function for registering SerializedPayloads with NeoForge networking.
+- Created typealiases in `dev.wanderia.netlib.payload.api` for moved classes.
+
 ### Changed
+
+- Renamed Marven artifacts to match targets: `netlib-common`, `netlib-fabric`, `netlib-neoforge`
+- Moved `dev.wanderia.netlib.payload.api` classes to `dev.wanderia.netlib.payload`
+- Updated `dokka` from `1.9.20` to `2.0.0-Beta`
+- Updated `fabric-api` from `0.103.0+1.21.1` to `0.105.0+1.21.1`
+- Updated `fabric-kotlin` from `1.12.1+kotlin.2.0.20` to `1.12.2+kotlin.2.0.20`
+- Updated `fabric-loader` from `0.16.3` to `0.16.5`
+- Updated `kotlinx-serialization` from `1.7.1` to `1.7.3`
 
 ### Deprecated
 
+- Typealiases in `dev.wanderia.netlib.payload.api`, replace with `dev.wanderia.netlib.payload`.
+
 ### Removed
 
+- Testmod, to be added back for each runtime target.
+
 ### Fixed
+
+- Broken dokka versioning plugin configuration.
 
 ### Security
 

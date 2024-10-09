@@ -17,8 +17,14 @@ repositories {
     maven("https://maven.wanderia.dev/releases") { name = "Wanderia" }
 }
 dependencies {
-    include("dev.wanderia:netlib:$version")
-    modImplementation("dev.wanderia:netlib:$version")
+    // Fabric
+    include("dev.wanderia:netlib-fabric:$version")
+    modImplementation("dev.wanderia:netlib-fabric:$version")
+    
+    // NeoForge
+    jarJar("dev.wanderia:netlib-neoforge:$version") {
+        jarJar.pin(it, "[$version,)")
+    }
 }
 ```
 See the [testmod](https://github.com/wanderia/netlib/tree/main/src/testmod) for example usage.
