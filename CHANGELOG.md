@@ -7,6 +7,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+### Changed
+
+### Deprecated
+
+### Removed
+
+### Fixed
+
+### Security
+
+## [1.3.1] - 2024-10-09
+
+### Added
+
 - NeoForge runtime target
 - (NeoForge) `PayloadRegistrar.netlibPayload` extension function for registering SerializedPayloads with NeoForge networking.
 - Created typealiases in `dev.wanderia.netlib.payload.api` for moved classes.
@@ -33,9 +47,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Broken dokka versioning plugin configuration.
 
-### Security
-
-## [1.2.0] - 2024-08-28
+## 1.2.0 - 2024-08-28
 
 ### Added
 
@@ -55,7 +67,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Broken custom entrypoint.
 
-## [1.1.0] - 2024-07-20
+## 1.1.0 - 2024-07-20
 
 ### Added
 
@@ -79,7 +91,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `dev.wanderia.netlib.samples` has been replaced with a full example test mod in `src/testmod`.
 - Yumi licenser (replaced by spotless)
 
-## [1.0.0] - 2024-02-16
+## 1.0.0 - 2024-02-16
 
 ### Added
 

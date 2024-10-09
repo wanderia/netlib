@@ -1,0 +1,12 @@
+$dokka.format:html-v1
+$dokka.linkExtension:html
+
+module:common
+dev.wanderia.netlib.format
+dev.wanderia.netlib.payload
+dev.wanderia.netlib.payload.api
+dev.wanderia.netlib.serializers
+module:fabric
+dev.wanderia.netlib
+module:neoforge
+dev.wanderia.netlib
