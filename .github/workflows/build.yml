@@ -80,7 +80,7 @@ jobs:
       - name: Publish to Modrinth
         env:
           MODRINTH_TOKEN: ${{ secrets.MODRINTH_TOKEN }}
-        run: ./gradlew modrinthSyncBody :mod:fabric:modrinth :mod:neoforge:modrinth
+        run: ./gradlew :modrinthSyncBody :mod:fabric:modrinth :mod:neoforge:modrinth
 
       - name: Publish to GitHub
         env:
