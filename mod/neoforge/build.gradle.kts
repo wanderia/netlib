@@ -51,6 +51,7 @@ modrinth {
                 else -> "release"
             }
         }
+    loaders.set(listOf("neoforge"))
     uploadFile.set(tasks.jar)
     additionalFiles.set(listOf(tasks.sourcesJar))
     gameVersions = listOf(libs.versions.minecraft.get())
