@@ -5,6 +5,7 @@ import org.jetbrains.changelog.date
 plugins {
     alias(libs.plugins.kotlin) apply false
     alias(libs.plugins.loom) apply false
+    alias(libs.plugins.neogradle) apply false
     alias(libs.plugins.kotlin.serialization) apply false
     alias(libs.plugins.spotless) apply false
     alias(libs.plugins.changelog)
@@ -19,7 +20,7 @@ plugins {
 }
 
 group = "dev.wanderia"
-version = "1.3.0"
+version = "1.3.1"
 
 repositories { mavenCentral() }
 

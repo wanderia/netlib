@@ -8,6 +8,7 @@ Kotlinx Serialization for Minecraft Payloads.
 ### Features
 - Kotlinx Serialization encoder/decoder for Minecraft's FriendlyByteBuf/PacketByteBuf.
 - Abstract `SerializedPayload` for easy packet creation.
+- Support for both Fabric and NeoForge loaders.
 
 ### Developer Usage
 This project is intended to be included via Jar-in-Jar.\
@@ -22,8 +23,11 @@ dependencies {
     modImplementation("dev.wanderia:netlib-fabric:$version")
     
     // NeoForge
-    jarJar("dev.wanderia:netlib-neoforge:$version") {
-        jarJar.pin(it, "[$version,)")
+    jarJar(implementation("dev.wanderia:netlib-neoforge")) {
+        version {
+            strictly("[$version,)")
+            prefer("$version")
+        }
     }
 }
 ```

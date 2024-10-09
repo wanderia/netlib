@@ -12,7 +12,7 @@ kotlinx-kover = "0.8.3" # https://github.com/Kotlin/kotlinx-kover/releases
 kotlinxSerialization = "1.7.3" # https://github.com/Kotlin/kotlinx.serialization/releases
 minecraft = "1.21.1"
 neoForge = "21.1.66" # https://projects.neoforged.net/neoforged/neoforge
-neoGradle = "7.0.165" # https://projects.neoforged.net/neoforged/neogradle
+neoGradle = "2.0.34-beta" # https://projects.neoforged.net/neoforged/moddevgradle
 minotaur = "2.8.7" # https://github.com/modrinth/minotaur/releases
 parchment = "2024.07.28" # https://parchmentmc.org/docs/getting-started
 spotless = "7.0.0.BETA2" # https://github.com/diffplug/spotless/blob/main/plugin-gradle/CHANGES.md
@@ -41,7 +41,7 @@ kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", versi
 kotlinx-kover = { id = "org.jetbrains.kotlinx.kover", version.ref = "kotlinx-kover" }
 loom = { id = "fabric-loom", version.ref = "fabricLoom" }
 minotaur = { id = "com.modrinth.minotaur", version.ref = "minotaur" }
-neogradle = { id = "net.neoforged.gradle.userdev", version.ref = "neoGradle" }
+neogradle = { id = "net.neoforged.moddev", version.ref = "neoGradle" }
 spotless = { id = "com.diffplug.spotless", version.ref = "spotless" }
 
 # custom plugins, in buildLogic/

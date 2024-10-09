@@ -15,12 +15,18 @@ repositories {
     maven("https://thedarkcolour.github.io/KotlinForForge/") { name = "KotlinForForge" }
 }
 
-dependencies {
-    implementation(libs.neoforge)
-    implementation(libs.kotlinforforge)
-}
+dependencies { implementation(libs.kotlinforforge) }
 
-subsystems { parchment { mappingsVersion = libs.versions.parchment.get() } }
+neoForge {
+    version = libs.versions.neoForge.get()
+
+    parchment {
+        minecraftVersion = "1.21"
+        mappingsVersion = libs.versions.parchment.get()
+    }
+
+    unitTest { enable() }
+}
 
 tasks {
     processResources {
