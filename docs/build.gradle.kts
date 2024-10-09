@@ -1,6 +1,6 @@
 plugins {
     alias(libs.plugins.loader.dokka)
-    alias(libs.plugins.dokka.javadoc)
+//    alias(libs.plugins.dokka.javadoc)
 }
 
 repositories {
